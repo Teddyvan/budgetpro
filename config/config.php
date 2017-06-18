@@ -6,14 +6,14 @@
 /*NOM DE L'application*/
 define("APP_NAME","Budget Programme");
 define("URL_BASE","http://localhost/mcode/");
-define("DOSSIER_PROJET","perfodev/").
+define("DOSSIER_PROJET","retrospect.fr/").
 define("DOCUMENT_ROOT",$_SERVER['DOCUMENT_ROOT']);
 define("HTTP_HOST",$_SERVER['HTTP_HOST']);
 define("RACINE",DOCUMENT_ROOT."/".DOSSIER_PROJET);
 //utiliser pour acceder au fichier like les images
-define('SERVER',"http://".HTTP_HOST."/".DOSSIER_PROJET.'public');
+define('SERVER',"http://".HTTP_HOST."/".'public');
 //utiliser pour les liens de menu et du forms
-define('SERVERS',"http://".HTTP_HOST."/".DOSSIER_PROJET);
+define('SERVERS',"http://".HTTP_HOST."/");
 //DATABASE
 define('DB_HOST','localhost');
 define('DB_NAME','sni');

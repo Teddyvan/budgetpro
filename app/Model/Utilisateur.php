@@ -4,7 +4,7 @@
  * Model Utilisateur
  */
 namespace App\Model ;
-require_once ROOT.'unirest\src\Unirest.php';
+require_once ROOT.'/unirest/src/Unirest.php';
 use Unirest\Request as Request;
 class Utilisateur
 {
@@ -16,8 +16,8 @@ class Utilisateur
     public function connexion($data)
     {
         $headers = array('Accept' => 'application/json');
-        $body = Unirest\Request\Body::json($data);
-
+        $body = json_encode($data);
+        return $body ;
         $response = Request::post(URL_BASE, $headers, $body) ;
 
         if($response->code === 200)

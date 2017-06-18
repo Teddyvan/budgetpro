@@ -15,7 +15,7 @@ class UtilisateurController extends AppController
 	public function __construct()
 	{
 		parent::__construct();
-		$this->loadModel("Utilisateur");
+		 $this->loadModel("Utilisateur");
 	}
 
 	public function index()
@@ -52,7 +52,9 @@ class UtilisateurController extends AppController
            // $this->connexion();
             $user = array();
             $user =  $this->clean($_POST);
-            $this->utilisateur->connexion($json);
+            var_dump( $this->Utilisateur->connexion($user));
+            $this->render("administration.utilisateurs.index");
+
         }
         else
         {

@@ -1,7 +1,8 @@
 <?php
-define("ROOT",dirname(__DIR__).'\\');
-require ROOT.'config\config.php';
-require ROOT.'app\App.php';
+require '../config/config.php';
+define("ROOT",DOCUMENT_ROOT);
+
+require DOCUMENT_ROOT.'/app/App.php';
 App::load();
 
 if(isset($_GET['p']))

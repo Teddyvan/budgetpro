@@ -15,7 +15,7 @@ class AppController extends Controller
 
 	public function __construct()
 	{
-		$this->viewPath = ROOT. 'app\views\\' ;
+		$this->viewPath = ROOT. '/app/views/' ;
 	}
 
 	/**

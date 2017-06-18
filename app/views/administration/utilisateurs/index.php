@@ -150,7 +150,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+                            <button type="submit" name="addUser" class="btn btn-primary pull-right">Enregistrer</button>
                         </div>
                     </fieldset>
                 </form>
