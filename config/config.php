@@ -5,6 +5,7 @@
 //ini_set('display_errors','On');
 /*NOM DE L'application*/
 define("APP_NAME","Budget Programme");
+define("URL_BASE","http://localhost/mcode/");
 define("DOSSIER_PROJET","perfodev/").
 define("DOCUMENT_ROOT",$_SERVER['DOCUMENT_ROOT']);
 define("HTTP_HOST",$_SERVER['HTTP_HOST']);
@@ -15,7 +16,7 @@ define('SERVER',"http://".HTTP_HOST."/".DOSSIER_PROJET.'public');
 define('SERVERS',"http://".HTTP_HOST."/".DOSSIER_PROJET);
 //DATABASE
 define('DB_HOST','localhost');
-define('DB_NAME','template');
+define('DB_NAME','sni');
 define('DB_USER','root');
 define('DB_PASSWORD','');
 //RESSOURCES

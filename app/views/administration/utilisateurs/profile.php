@@ -86,27 +86,33 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-3 control-label">Matricule <span class="required">*</span></label>
+                            <div class="col-md-6">
+                                <input id="matricule" type="text" required="true" name="matricule" placeholder="matricule" class="form-control required">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-3 control-label">Nom <span class="required">*</span></label>
                             <div class="col-md-6">
-                                <input id="nom" type="text" required="true" name="nom" placeholder="Nom" class="form-control required fonction">
+                                <input id="nom" type="text" required="true" name="nom" placeholder="Nom" class="form-control required ">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Prénom <span class="required">*</span></label>
                             <div class="col-md-6">
-                                <input id="prenom" type="text" required="true" name="prenom" placeholder="Prénom" class="form-control required fonction">
+                                <input id="prenom" type="text" required="true" name="prenom" placeholder="Prénom" class="form-control required ">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Téléphone <span class="required">*</span></label>
                             <div class="col-md-6">
-                                <input id="tel" type="tel" required="true" name="tel" placeholder="70XXXXXX" class="form-control required fonction">
+                                <input id="tel" type="tel" required="true" name="tel" placeholder="70XXXXXX" class="form-control required ">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Email <span class="required">*</span></label>
                             <div class="col-md-6">
-                                <input id="email" type="email" required="true" name="email" placeholder="XX@example.com" class="form-control required fonction">
+                                <input id="email" type="email" required="true" name="email" placeholder="XX@example.com" class="form-control required ">
                             </div>
                         </div>
                     </fieldset>
@@ -115,7 +121,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Identifiant <span class="required">*</span></label>
                             <div class="col-md-6">
-                                <input id="identifiant" type="text" required="true" name="identifiant" placeholder="Identifiant" class="form-control required fonction">
+                                <input id="identifiant" type="text" required="true" name="identifiant" placeholder="Identifiant" class="form-control required ">
                             </div>
                         </div>
                         <div class="form-group">
@@ -153,7 +159,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">photo <span class="required">*</span></label>
                             <div class="col-md-6">
-                                <input id="photo" type="file" required="true" name="photo" class="form-control required fonction">
+                                <input id="photo" type="file" required="true" name="photo" class="form-control required ">
                             </div>
                         </div>
                         <div class="box-footer">

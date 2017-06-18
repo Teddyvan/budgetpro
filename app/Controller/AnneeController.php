@@ -1,5 +1,8 @@
 <?php
 namespace App\Controller ;
+use \App\Model\Annee ;
+require_once ROOT.'unirest\src\Unirest.php';
+use Unirest\Request as Request;
 /**
  * AnneeController short summary.
  *
@@ -19,8 +22,9 @@ class AnneeController extends AppController
 
 	public function index()
 	{
-		$UserInfo = array("username"=>"Bessin","fonction"=>"Ivan") ;
-		$this->render("administration.annee.index",compact('UserInfo'));
+
+		$response = $this->Annee->getAll();
+		$this->render("administration.annee.index",compact('response'));
 	}
 
 

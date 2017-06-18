@@ -25,9 +25,8 @@ class Autoloader
 	 */
 	public static function autoload($class)
 	{
-
 		//si la classe est dans notre namespace alors on autoload sinon on fait rien
-		if(strpos($class,__NAMESPACE__.'\\') === 0)
+		if(strpos($class,__NAMESPACE__."\\") === 0)
 		{
 			$class = str_replace(__NAMESPACE__.'\\','',$class);
 		//	$class = str_replace('\\','/',$class);

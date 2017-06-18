@@ -11,22 +11,23 @@ use Core\Database\Database;
  * @version 1.0
  * @author Bessin Ivan
  */
-class Table
+class DAOMysql extends Database
 {
 	protected $table;
 	protected $db ;
 
-	public function __construct(Database $db)
+	public function __construct($table)
 	{
-		$this->db = $db;
-		if(is_null($this->table))
-		{
-			$parts = explode('\\',get_class($this));
-			$class_name = end($parts) ;
-			$this->table = strtolower(str_replace('Table','',$class_name)) ;
-		}
+        parent::__construct($table) ;
+        //$this->db = $this->getPDO();
+        //if(is_null($this->table))
+        //{
+        //    //$parts = explode('\\',get_class($this));
+        //    //$class_name = end($parts) ;
+        //    $this->table = $table ;
+        //}
 	}
 
-	
+
 
 }

@@ -1,8 +1,6 @@
 <?php
-
 define("ROOT",dirname(__DIR__).'\\');
 require ROOT.'config\config.php';
-require ROOT.'config\unirest-php\src\Unirest.php';
 require ROOT.'app\App.php';
 App::load();
 

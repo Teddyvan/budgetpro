@@ -27,7 +27,8 @@ class App
 	public static function getTable($name)
 	{
 		$class_name = "\App\Model\\" . ucfirst($name) ;
-		return new $class_name($this->getDb());
+		//return new $class_name($this->getDb());
+        return new $class_name();
 	}
 
 	public function getDb()
@@ -35,7 +36,7 @@ class App
 
 		if(is_null($this->db_instance))
 		{
-			$this->db_instance = new Database(self::DB_NAME,self::DB_USER,self::DB_PASS,self::DB_HOST);
+			$this->db_instance = new Database(DB_NAME,DB_USER,sDB_PASS,DB_HOST);
 		}
 		return $this->db_instance  ;
 	}
