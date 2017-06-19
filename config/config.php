@@ -4,9 +4,13 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors','On');
 /*NOM DE L'application*/
+$pathRepertoire =  dirname(__DIR__);
+$pathRepertoire = explode(DIRECTORY_SEPARATOR,$pathRepertoire);
+$nombreNoeud = count($pathRepertoire);
+$dossierProjet = $pathRepertoire[$nombreNoeud -1] ;
 define("APP_NAME","Budget Programme");
 define("URL_BASE","http://localhost/mcode/");
-define("DOSSIER_PROJET","retrospect.fr/").
+define("DOSSIER_PROJET",$dossierProjet);
 define("DOCUMENT_ROOT",$_SERVER['DOCUMENT_ROOT']);
 define("HTTP_HOST",$_SERVER['HTTP_HOST']);
 define("RACINE",DOCUMENT_ROOT."/".DOSSIER_PROJET);
