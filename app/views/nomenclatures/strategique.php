@@ -1,4 +1,10 @@
 <!-- Main content -->
+<?php
+if(!empty($objStrat))
+{
+	var_dump($objStrat);
+}
+?>
       <div class="row">
         <div class="col-md-9">
             <div class="box">
@@ -24,22 +30,22 @@
             <div class="box-body">
               <div class="box-body">
 
-              <form class="form-horizontal row-border">
+              <form class="form-horizontal row-border" method="POST" action="<?=SERVERS?>Nomenclature/ajouterStrategique">
               <div class="form-group">
                 <label class="col-md-3 control-label">Code <span class="required">*</span></label>
                 <div class="col-md-6">
-                  <input id="national_Code" type="number" required="true" name="national_Code"  class="form-control required fonction" placeholder="Code objectif strategique national"/>
+                  <input id="national_Code" type="number" required="true" name="objnational_Code"  class="form-control required fonction" placeholder="Code objectif strategique national"/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">Intitulé <span class="required">*</span></label>
                 <div class="col-md-6">
-                <textarea class="form-control" name="national_intitule" id="national_intitule" rows="3" placeholder="Intitulé objectif strategique national"></textarea>
+                <textarea class="form-control" name="objnational_intitule" id="national_intitule" rows="3" placeholder="Intitulé objectif strategique national"></textarea>
                 </div>
               </div>
             <!-- /.box-body -->
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+              <button type="submit" name="national" class="btn btn-primary pull-right">Enregistrer</button>
             </div>
             </form>
           </div>
@@ -55,11 +61,11 @@
             <div class="box-body">
               <div class="box-body">
 
-              <form class="form-horizontal row-border">
+             <form class="form-horizontal row-border" method="POST" action="<?=SERVERS?>Nomenclature/ajouterStrategique">
                 <div class="form-group">
                 <label class="col-md-3 control-label">Selectionnez l'axe strategique nationale <span class="required">*</span></label>
                 <div class="col-md-6">
-                  <select required="true"id="ministreAxNat" name='ministreAxNat' class="form-control">
+                  <select required="true"id="id_axeStrat_nationMinist" name='id_axeStrat_nationMinist' class="form-control">
                     <!--<option value="">Choissisez l'agence</option>-->
                     <option value='-1'>Selectionnez l'axe strategique nationale</option>
                     <option>Promotion</option>
@@ -70,18 +76,18 @@
               <div class="form-group">
                 <label class="col-md-3 control-label">Code <span class="required">*</span></label>
                 <div class="col-md-6">
-                  <input id="national_Code" type="number" required="true" name="national_Code"  class="form-control required fonction" placeholder="Code objectif strategique ministériel"/>
+                  <input id="objminist_code" type="number" required="true" name="objminist_code"  class="form-control required fonction" placeholder="Code objectif strategique ministériel"/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">Intitulé <span class="required">*</span></label>
                 <div class="col-md-6">
-                <textarea class="form-control" name="national_intitule" id="national_intitule" rows="3" placeholder="Intitulé objectif strategique ministériel"></textarea>
+                <textarea class="form-control" name="objminist_intitule" id="objminist_intitule" rows="3" placeholder="Intitulé objectif strategique ministériel"></textarea>
                 </div>
               </div>
             <!-- /.box-body -->
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+              <button type="submit"  class="btn btn-primary pull-right">Enregistrer</button>
             </div>
             </form>
           </div>

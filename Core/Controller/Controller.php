@@ -99,12 +99,21 @@ class Controller
          * @param mixed $tableau tableau dont les valeurs doivent etre netoye
          * @return string[]
          */
-        protected function clean($tableau) {
+        protected function clean($tableau)
+		{
             $result = array();
-            foreach($tableau as $k => $v)
-            {
-                $result[$k] = htmlspecialchars($v, \ENT_QUOTES, 'UTF-8', false);
-            }
+			if(is_array($tableau))
+			{
+				foreach($tableau as $k => $v)
+				{
+					$result[$k] = htmlspecialchars($v, \ENT_QUOTES, 'UTF-8', false);
+				}
+			}
+			elseif(is_string($tableau))
+			{
+				return htmlspecialchars($tableau, \ENT_QUOTES, 'UTF-8', false);
+			}
+
 			return $result;
 		}
 
@@ -216,14 +225,35 @@ class Controller
           * @param type $methode Methode Methode
           * @param type $param Paramètres
           */
-         protected function redirect($racine_site = "", $controleur = "", $methode = null, $param = null)
-         {
-             // Redirection vers l'URL /racine_site/controleur/methode/paramètres
-             $url = $racine_site; /*  /racine_site/  */
-             if($controleur != null) $url .=  $controleur;
-             if ($methode != null) 	$url .= "/" . $methode;
-             if ($param != null) 	$url .= "/" . $param;
-             header("Location:" . $url);
-             exit();
-         }
+         protected function redirect($controleur = "", $methode = null, $param = null)
+				 {
+					 // Redirection vers l'URL /racine_site/controleur/methode/paramètres
+					 $url = URL_RACINE; /*  /racine_site/  */
+					 if($controleur != null) $url .=  $controleur;
+					 if ($methode != null) 	$url .= "/" . $methode;
+					 if ($param != null) 	$url .= "/" . $param;
+					header("Location:" . $url);
+					exit();
+				 }
+		/**
+		* Renvoie l'objet session associé à la requête
+		*
+		* @return Session Objet session
+		*/
+		public function get()
+		{
+			return $this->clean($_GET);
+		}
+
+		/**
+		* Renvoie l'objet session associé à la requête
+		*
+		* @return Session Objet session
+		*/
+		public function post()
+		{
+			return $this->clean($_POST);
+		}
+
+
 }

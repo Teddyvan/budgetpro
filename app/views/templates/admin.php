@@ -14,8 +14,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <?php// require_once("breadcumbs.php") ;?>
+ 
 
     <!-- Main content -->
     <section class="content">

@@ -60,7 +60,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=SERVERS?>gplanification/index" title=""><i class="fa fa-circle-o"></i>Planification</a></li>
+              <li class="treeview">
+                  <a href="#">
+                      <i class="fa fa-list"></i>
+                      <span>Planification</span>
+                      <span class="pull-right-container">
+                          <span class="label label-primary pull-right">5</span>
+                      </span>
+                  </a>
+                  <ul class="treeview-menu">
+                      <li><a href="#" title=""><i class="fa fa-circle-o"></i>Sections et chapitres </a> </li>
+                      <li><a href="<?=SERVERS?>Programme/index" title=""><i class="fa fa-circle-o"></i>Programmes </a> </li>
+                      <li> <a href="<?=SERVERS?>Action/index" title=""> <i class="fa fa-circle-o"></i>Actions </a></li>
+                      <li> <a href="<?=SERVERS?>Activite/index" title="">  <i class="fa fa-circle-o"></i>Activités</a> </li>
+                      <li> <a href="<?=SERVERS?>Tache/index" title=""> <i class="fa fa-circle-o"></i>Taches </a></li>
+                  </ul>
+              </li>
             <li><a href="<?=SERVERS?>gpip/index" title=""><i class="fa fa-circle-o"></i>PIP</a></li>
             <li><a href="<?=SERVERS?>gcdmt/index" title=""><i class="fa fa-circle-o"></i>CDMT</a></li>
             <li><a href="<?=SERVERS?>gbudget/index" title=""><i class="fa fa-circle-o"></i>Budgetisation</a></li>

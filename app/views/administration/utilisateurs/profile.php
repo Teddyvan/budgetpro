@@ -73,7 +73,7 @@
            <div class="tab-pane" id="settings">
 
             <div class="box-body">
-                <form class="form-horizontal" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="<?=SERVERS?>Utilisateur/ajouter" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informations personnelles</legend>
                         <div class="form-group">
@@ -163,7 +163,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+                            <button type="submit" name="addUser" class="btn btn-primary pull-right">Enregistrer</button>
                         </div>
                     </fieldset>
                 </form>

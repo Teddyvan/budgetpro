@@ -4,26 +4,38 @@
  * Model Utilisateur
  */
 namespace App\Model ;
-require_once ROOT.'/unirest/src/Unirest.php';
-use Unirest\Request as Request;
-class Utilisateur
-{
-   /* public function __construct()
-    {
-        parent::__construct("article");
-    }*/
 
+class Utilisateur extends \Core\Database\Api
+{
+    public function __construct()
+    {
+        parent::__construct("utilisateur");
+    }
+
+	//connexion
     public function connexion($data)
     {
-        $headers = array('Accept' => 'application/json');
-        $body = json_encode($data);
-        return $body ;
-        $response = Request::post(URL_BASE, $headers, $body) ;
-
-        if($response->code === 200)
-        {
-            return $response->body ;
-        }
+		try
+		{
+			return $this->getconnexion($data);
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
+    }
+	
+	//ajout d'un utilisateur
+	public function add($data)
+    {
+		try
+		{
+			return $this->addUser($data);
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
     }
 
 }

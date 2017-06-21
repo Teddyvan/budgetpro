@@ -1,7 +1,8 @@
 <?php
 namespace Core\Database ;
-require_once ROOT.'unirest\src\Unirest.php';
+require_once ROOT.'unirest/src/Unirest.php';
 use Unirest\Request as Request;
+use Unirest\Request\Body as Body;
 /**
  * Api short summary.
  *
@@ -21,17 +22,26 @@ class Api
 		$this->_pkey = $primary_key;
 	}
 
-    public function send($data= array())
+	/**
+	*Requete d'ajout d'un nouvel utilisateur
+	*/
+    public function addUser($data= array())
     {
-
+		$headers = array('Accept' => 'application/json');
+		$body = Body::json($data);
+        $response = Request::post(URL_BASE.'/compte/connexion',$headers,$body);
+		return $response;
     }
-
-    public function recuperer()
+	
+	/**
+	*Requete de connexion
+	*/
+	public function getconnexion($data)
     {
-        $response = Request::get(URL_BASE.'t.json', null, null, 'username', 'password');
-        if($response->code ===200)
-        {
-            return $response->body ;
-        }
+		$headers = array('Accept' => 'application/json');
+		$body = Body::json($data);
+        $response = Request::post(URL_BASE.'/compte/connexion',$headers,$body);
+		return $response;
     }
+	
 }

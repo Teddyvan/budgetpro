@@ -8,10 +8,18 @@ class Annee extends \Core\Database\Api
         parent::__construct("article");
     }
 
-    public function getAll()
+    public function getAll($data)
     {
 
-        return $this->recuperer();
+       try
+		{
+			$data = array("email"=>"mon@email.com","pass"=>"pass");
+			return $this->getconnexion($data);
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+		}
     }
 
 }

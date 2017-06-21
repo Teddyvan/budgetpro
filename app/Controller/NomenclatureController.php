@@ -124,4 +124,13 @@ class NomenclatureController extends AppController
 	    {
 	      $this->render("nomenclatures.strategique");
 	    }
+		
+		public function ajouterStrategique()
+		{
+			$objStrat = array();
+			$objStrat =  $this->clean($_POST);
+			$objStrat = json_encode($objStrat);
+			$this->render("nomenclatures.strategique",compact("objStrat"));
+		}
+		
 }

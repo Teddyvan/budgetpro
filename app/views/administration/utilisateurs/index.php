@@ -1,4 +1,6 @@
-
+<?php if(!empty($user)){
+	var_dump($user);
+} ?>
    <div class="row">
      <!-- /.col -->
      <div class="col-md-9">
@@ -60,7 +62,7 @@
            <div class="tab-pane" id="settings">
 
             <div class="box-body">
-                <form class="form-horizontal" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="<?=SERVERS?>Utilisateur/ajouter" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informations personnelles</legend>
                         <div class="form-group">

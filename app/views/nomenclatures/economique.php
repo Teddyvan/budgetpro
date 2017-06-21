@@ -1,4 +1,5 @@
-    <!-- Main content -->
+<link rel="stylesheet" href="<?=SERVER?>/dist/treeview/default/style.min.css">
+   <!-- Main content -->
           <div class="row">
             <div class="col-md-9">
                 <div class="box">
@@ -30,7 +31,7 @@
                     <div class="form-group">
                     <label class="col-md-3 control-label">Nature du titre <span class="required">*</span></label>
                     <div class="col-md-6">
-                      <select required="true"id="natTitre" name='natTitre' class="form-control">
+                      <select required="true" id="natTitre" name='natTitre' class="form-control">
                         <!--<option value="">Choissisez l'agence</option>-->
                         <option value='-1'>Selectionnez la nature du titre</option>
                         <option>Depense</option>
@@ -81,7 +82,7 @@
                       <div class="form-group">
                       <label class="col-md-3 control-label">Intitulé du titre <span class="required">*</span></label>
                       <div class="col-md-6">
-                        <select required="true"id="ar_intituleTitre" name='ar_intituleTitre' class="form-control">
+                        <select required="true" id="ar_intituleTitre" name='ar_intituleTitre' class="form-control">
                           <!--<option value="">Choissisez l'agence</option>-->
                           <option value='-1'>Selectionnez la nature du titre</option>
                           <option>Depense de bien et service</option>
@@ -132,7 +133,7 @@
                        <div class="form-group">
                        <label class="col-md-3 control-label">Intitulé de l'article <span class="required">*</span></label>
                        <div class="col-md-6">
-                         <select required="true"id="parag_intituleArticle" name='parag_intituleArticle' class="form-control">
+                         <select required="true" id="parag_intituleArticle" name='parag_intituleArticle' class="form-control">
                            <!--<option value="">Choissisez l'agence</option>-->
                            <option value='-1'>Selectionnez la nature du titre</option>
                            <option>Depense de bien et service</option>
@@ -180,7 +181,7 @@
                       <div class="form-group">
                       <label class="col-md-3 control-label">Intitulé paragraphe <span class="required">*</span></label>
                       <div class="col-md-6">
-                        <select required="true"id="rub_intituleParagraphe" name='rub_intituleParagraphe' class="form-control">
+                        <select required="true" id="rub_intituleParagraphe" name='rub_intituleParagraphe' class="form-control">
                           <option value='-1'>Selectionnez l'intitule du paragraphe</option>
                           <option>Intérêts des comptes courants et des dépôts</option>
                         </select>
@@ -226,7 +227,7 @@
                   <div class="col-md-3">
                       <div class="box box-warning">
                       <div class="box-header with-border">
-                         <h3 class="box-title">Menu secondaire</h3>
+                         <h3 class="box-title">Content</h3>
 
                          <div class="box-tools pull-right">
                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -238,10 +239,8 @@
 
                        <div class="box-body">
                          <section class="sidebar">
-
-                         <ul class="sidebar-menu">
-                             <li><a href="#" onclick="alert('Ajouter des actions au menu secondaire');"><i class="fa fa-list"></i>Lister</a></li>
-                         </ul>
+					<div id="evts" class="demo"></div>
+                        
                        </section>
                        </div>
 
@@ -250,3 +249,43 @@
                   </div>
                      <!-- Fin menu de droite -->
           </div>
+<script src="<?=SERVER?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?=SERVER?>/dist/treeview/jstree.min.js"></script>
+
+<script type="text/javascript">
+	// interaction and events
+	$('#evts')	
+		.on("click",function(){
+			jQuery.ajax({
+				url: '<?=SERVER?>/dist/treeview/root.json',
+				type: "GET",
+				dataType: 'json',
+				success: function (data) {
+					alert("reponse du get");
+					if(data.length != 0)
+					{
+						for(var i = 0 ;i < data.length ; i++)
+							alert(data[i].text);
+					}
+				},
+				error: function (jqxr, status) {
+					alert(jqxr.responseText+"<br />"+status) ;
+					}
+			});
+		})
+		.jstree({
+			'core' : {
+				'multiple' : false,
+				'data' : [
+					{ "text" : "Root node", "children" : [
+							{ "text" : "act 1", "id" : 1 },
+							{ "text" : "act 2","id" : 3 }
+					]},
+					{ "text" : "Root node 2", "children" : [
+							{ "text" : "act 3", "id" : 1 },
+							{ "text" : "act 4","id" : 3 }
+					]}
+				]
+			}
+		});
+</script>
